@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="UTF-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>نوري | سبا رجالي</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.rtl.min.css" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+<div id="loader">
+  <div class="text-center">
+    <div class="loader-logo-n">نوري</div>
+    <div class="loader-line"></div>
+  </div>
+</div>
+
+<div class="promo-toast" id="promoToast">
+  <button class="close-t"><i class="fa-solid fa-xmark"></i></button>
+  <h6>عرض توازن البداية</h6>
+  <p>خصم 20% لكل عميل يزورنا لأول مرة هذا الشهر.</p>
+</div>
+
+<nav class="navbar-nori">
+  <div class="container">
+    <a href="index.html" class="brand-n text-decoration-none">نوري</a>
+    <ul class="nav-links-n" id="navLinksN">
+      <li><a href="index.html" class="active">الرئيسية</a></li>
+      <li><a href="services.html" class=" ">الخدمات</a></li>
+      <li><a href="offers.html" class=" ">العروض</a></li>
+      <li><a href="about.html" class=" ">من نحن</a></li>
+    </ul>
+    <div class="d-flex align-items-center gap-3">
+      <button class="btn-outline-n d-none d-lg-inline-block" onclick="requireLoginThenOpenBookingN()">احجز جلستك</button>
+      <button class="nav-toggle-n" id="navToggleN"><i class="fa-solid fa-bars"></i></button>
+    </div>
+  </div>
+</nav>
+<section class="hero-n">
+  <img class="bg-n" src="https://picsum.photos/seed/norihero/1600/1000" alt="نوري">
+  <div class="container">
+    <p class="text-uppercase small" style="color:var(--gold-l);letter-spacing:.3em">MEN'S SPA &amp; WELLNESS</p>
+    <h1>توازن.. <br> في كل تفصيلة</h1>
+    <div class="divider-n"></div>
+    <p>خدمات سبا فاخرة للرجال، بتجربة متكاملة من الاسترخاء، العناية، وتجديد الطاقة.</p>
+    <button class="btn-outline-n mt-2" onclick="requireLoginThenOpenBookingN()">احجز جلستك الآن</button>
+  </div>
+</section>
+
+<section class="section-pad-n">
+  <div class="container text-center reveal-n mb-5">
+    <h2 class="section-title-n">خدماتنا</h2>
+    <p class="section-sub-n">كل ما يحتاجه جسمك وذهنك في مكان واحد</p>
+  </div>
+  <div class="container"><div class="row g-4" data-services-grid-n></div></div>
+</section>
+
+<section class="section-pad-n" style="background:var(--bg-2)">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6 reveal-n">
+        <h2 class="section-title-n">من نحن</h2>
+        <div class="divider-n" style="margin-inline-start:0;margin-inline-end:auto"></div>
+        <p class="section-sub-n">في نوري، نقدم لك أكثر من مجرد جلسة مساج. نمنحك تجربة سكينة متكاملة بلمسة رقيّة واحترافية، وتفاصيل مدروسة بعناية في أجواء دافئة وخاصة.</p>
+        <div class="row g-3 mt-3">
+          <div class="col-4"><div class="stat-box-n"><h3>7</h3><small class="section-sub-n">فروع</small></div></div>
+          <div class="col-4"><div class="stat-box-n"><h3>61</h3><small class="section-sub-n">أخصائي</small></div></div>
+          <div class="col-4"><div class="stat-box-n"><h3>750K</h3><small class="section-sub-n">جلسة</small></div></div>
+        </div>
+      </div>
+      <div class="col-lg-6 reveal-n"><img src="https://picsum.photos/seed/noriabout/900/650" class="img-fluid" style="border:1px solid var(--line)"></div>
+    </div>
+  </div>
+</section>
+
+<section class="section-pad-n">
+  <div class="container text-center reveal-n mb-5"><h2 class="section-title-n">عروضنا</h2></div>
+  <div class="container reveal-n">
+    <div id="offerCarousel" class="carousel slide carousel-n" data-bs-ride="carousel">
+      <div class="carousel-inner" id="offerCarouselInner"></div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#offerCarousel" data-bs-slide="prev"><i class="fa-solid fa-chevron-right" style="color:var(--gold-l)"></i></button>
+      <button class="carousel-control-next" type="button" data-bs-target="#offerCarousel" data-bs-slide="next"><i class="fa-solid fa-chevron-left" style="color:var(--gold-l)"></i></button>
+      <div class="carousel-indicators position-relative mt-4" id="offerCarouselIndicators" style="bottom:auto"></div>
+    </div>
+  </div>
+</section>
+<div class="offcanvas offcanvas-end offcanvas-n" tabindex="-1" id="serviceOffcanvas">
+  <div class="offcanvas-header">
+    <h5 class="offcanvas-title" id="ocTitle" style="font-family:'Tajawal',sans-serif;font-weight:500"></h5>
+    <button class="btn-close btn-close-white" data-bs-dismiss="offcanvas"></button>
+  </div>
+  <div class="offcanvas-body">
+    <img id="ocImg" class="img-fluid mb-3" style="border:1px solid var(--line)">
+    <p style="color:var(--text-dim)" id="ocDesc"></p>
+    <h6 style="color:var(--gold-l)" id="ocPrice" class="mb-4"></h6>
+
+    <div id="ocLoginArea">
+      <p class="small mb-2" style="color:var(--text-dim)">سجّل دخولك لبدء الحجز</p>
+      <form onsubmit="return doRegisterLoginN(event)">
+        <input required name="name" placeholder="الاسم" class="form-control form-control-n mb-2">
+        <input required type="email" name="email" placeholder="البريد الإلكتروني" class="form-control form-control-n mb-2">
+        <input required name="phone" placeholder="رقم الجوال" class="form-control form-control-n mb-2">
+        <input required name="job" placeholder="المهنة" class="form-control form-control-n mb-3">
+        <button class="btn-outline-n w-100">دخول ومتابعة الحجز</button>
+      </form>
+    </div>
+    <button class="btn-outline-n w-100 mb-3 d-none" id="ocStartBtn" disabled>بدء الحجز</button>
+    <div id="ocBookingArea"></div>
+  </div>
+</div>
+<footer class="nori-footer">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4"><span class="brand-n fs-3">نوري</span><p class="mt-3">توازن.. في كل تفصيلة.</p></div>
+      <div class="col-md-4"><h6>روابط</h6><a href="services.html" class="d-block mb-2">الخدمات</a><a href="offers.html" class="d-block mb-2">العروض</a><a href="about.html" class="d-block mb-2">من نحن</a></div>
+      <div class="col-md-4"><h6>تواصل معنا</h6><p><i class="fa-solid fa-phone me-2"></i>920000000</p><p><i class="fa-solid fa-location-dot me-2"></i>الدمام - الخبر - الجبيل</p></div>
+    </div>
+    <hr style="border-color:var(--line)">
+    <p class="text-center mb-0 small">© 2026 نوري سبا. جميع الحقوق محفوظة.</p>
+  </div>
+</footer>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body></html>
